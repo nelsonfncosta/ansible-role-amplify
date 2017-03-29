@@ -1,0 +1,15 @@
+---
+- name: Fetch Amplify Agent
+  get_url:
+    url: https://github.com/nginxinc/nginx-amplify-agent/raw/master/packages/install.sh
+    dest: '{{ amplify_script_dest_path }}'
+    mode: 0755
+
+- name: Install Amplify Agent
+  shell: sh -c "API_KEY='{{ amplify_api_key }}' sh {{ amplify_script_dest_path }}/install.sh"
+  become: yes
+
+- name: Remove Amplify install script
+  file:
+    path: '{{ amplify_script_dest_path }}/install.sh'
+    state: absent

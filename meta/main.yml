@@ -1,0 +1,14 @@
+---
+galaxy_info:
+  author: Nélson Costa
+  description: Nginx Amplify Agent installation for Linux
+  min_ansible_version: 2
+  platforms:
+    - name: Ubuntu
+      versions:
+      - all
+    - name: Debian
+      versions:
+      - all
+
+dependencies: []
